@@ -1,7 +1,16 @@
+def my_pow(one, two) -> float:
+    k = 0
+    res = 1
+    while k < two:
+        res = res * one
+        k = k + 1
+    return res
+
+
 def is_prime(num) -> bool:
     if num >= 2:
         i = 2
-        while i < (int(pow(num, 0.5)) + 1):
+        while i*i < (num)+1:
         #for i in range(2, int(num ** 0.5) + 1):
             if num % i == 0:
                 return False

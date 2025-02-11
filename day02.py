@@ -1,10 +1,13 @@
 n = int(input("Input number : "))
-count = 0
-for i in range(1, n+1):
-    if n % i == 0:
-        count = count + 1
+is_prime = True
 
-if count == 2:
-     print(f"yes")
+if n >= 2:
+    for i in range(2, n):
+        if n % i == 0:
+            is_prime = False #count = count + 1
+            break
+
+if is_prime: #count == 0:
+     print("yes")
 else:
-     print(f"no")
+     print("no")

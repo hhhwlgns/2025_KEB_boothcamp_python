@@ -1,9 +1,4 @@
 def is_prime(num) -> bool:
-    """
-    A function that returns True if it is a prime number and False if it is not a prime number
-    :param num: integer number
-    :return: boolean type
-    """
     if num >= 2:
         i = 2
         while i < (int(num ** 0.5) + 1):
@@ -18,9 +13,14 @@ def is_prime(num) -> bool:
 # main
 #help(abs)
 #help(is_prime)
-n = int(input("Input number : "))
+num = input("Input number : ").split()
+n1 = int(num[0])
+n2 = int(num[1])
 
-if is_prime(n):  # function call
-    print(f"{n} is prime number")
-else:
-    print(f"{n} is NOT prime number!")
+if n1 > n2:
+    n1, n2 = n2, n1
+
+while n1 <= n2:
+    if is_prime(n1):
+        print(n1, end = " ")
+    n1 = n1 + 1

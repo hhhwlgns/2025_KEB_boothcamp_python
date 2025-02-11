@@ -1,29 +1,26 @@
-# main
-number = input("Input two number : ").split()
-n1 = int(number[0])
-n2 = int(number[1])
-
-if n1 > n2:
-    n1, n2 = n2, n1
-
-if n1 < 2:
-    print("올바른 수가 아닙니다.")
-
-else:
-    while n1 <= n2:
+def is_prime(num) -> bool:
+    """
+    A function that returns True if it is a prime number and False if it is not a prime number
+    :param num: integer number
+    :return: boolean type
+    """
+    if num >= 2:
         i = 2
-        k = 0
-
-        while i <= int(n1 ** 0.5):
-            if n1 % i == 0:
-                k = k + 1
-                break
+        while i < (int(num ** 0.5) + 1):
+        #for i in range(2, int(num ** 0.5) + 1):
+            if num % i == 0:
+                return False
             i = i + 1
+    else:
+        return False
+    return True
 
-        if k == 0:
-            print(n1, end=" ")
+# main
+#help(abs)
+#help(is_prime)
+n = int(input("Input number : "))
 
-        n1 = n1 + 1
-
-
-
+if is_prime(n):  # function call
+    print(f"{n} is prime number")
+else:
+    print(f"{n} is NOT prime number!")

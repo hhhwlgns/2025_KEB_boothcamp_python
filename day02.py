@@ -1,15 +1,29 @@
-x = 2
-y = x + 5  # NameError: name 'x' is not defined
-print(y)
+# main
+number = input("Input two number : ").split()
+n1 = int(number[0])
+n2 = int(number[1])
 
-print(type(3.14))
-print(type(3.14) == float)
-print(isinstance(3.14, float))
-print(isinstance("Inha", float))
-print(isinstance(55, float))
+if n1 > n2:
+    n1, n2 = n2, n1
 
-artists = ['BTS', '뉴진스', '핑클', 'SES', 'HOT', '블랙핑크']
-groups = artists
-print(artists, groups)
-artists[2] = '세븐틴'
-print(artists, groups)
+if n1 < 2:
+    print("올바른 수가 아닙니다.")
+
+else:
+    while n1 <= n2:
+        i = 2
+        k = 0
+
+        while i <= int(n1 ** 0.5):
+            if n1 % i == 0:
+                k = k + 1
+                break
+            i = i + 1
+
+        if k == 0:
+            print(n1, end=" ")
+
+        n1 = n1 + 1
+
+
+

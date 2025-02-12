@@ -35,4 +35,3 @@ while True:
 
     else:
         print(f'다시 입력하세요.')
-

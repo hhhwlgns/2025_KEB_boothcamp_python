@@ -34,5 +34,5 @@ while True:
         break
 
     else:
-        print(f'다시 입력하세요')
+        print(f'다시 입력하세요.')
 
